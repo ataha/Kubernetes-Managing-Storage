@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nfs-pod
+spec:
+  containers:
+    - name: the-container
+      image: nginx
+      volumeMounts:
+      - mountPath: "/mnt/data"
+        name: nfs-direct-volume
+  volumes:
+    - name: nfs-direct-volume
+      persistentVolumeClaim:
+        claimName: nfs-pvc-claim

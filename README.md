@@ -1,4 +1,4 @@
-# Kubernetes-Managing-Storage
+# Kubernetes-Managing-Storage  "Proof of concept"
 
 **1- Using emptyDir for intra-pod communication**
 
@@ -21,4 +21,8 @@ ___________________________________________________________________________
   - Local volumes should have node affinity annotations. 
   - StorageClass needed in order to use local volumes.
 ____________________________________________________________________________
+**4- Provisioning persistent volumes using DirectNFS**
 
+**Usage**:
+ - It is good to move storage provisioners out of Kubernetes core into volume plugins ( NFS in this case )
+____________________________________________________________________________
