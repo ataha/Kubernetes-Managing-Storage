@@ -10,6 +10,6 @@ __________________________________________________________________________
 
 **Usage**:
 
-  -If you want pods to get access to some host information or you want pods on the same node to communicate with each other (DaemonSet, Pod affinity, single node, etc )
+  - If you want pods to get access to some host information or you want pods on the same node to communicate with each other (DaemonSet, Pod affinity, single node, etc )
 It is not persistent in case of pod restarts and node restarts   
 
