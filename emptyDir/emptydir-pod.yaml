@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: emptydir-demo
+  namespace: default
+spec:
+  containers:
+  - name: centos
+    image: centos:7
+    command:
+      - sleep
+      - "3600"
+    volumeMounts:
+      - mountPath: /data1
+        name: my-volume
+  - name: nginx
+    image: nginx
+    volumeMounts:
+      - mountPath: /data2
+        name: my-volume
+  volumes:
+  - name: my-volume
+    emptyDir: {}
