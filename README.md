@@ -6,6 +6,7 @@
   - To share data between containers in the same pod using a shared volume.
 It is not Persistent , if pod removed from node, the contents are erased.
 __________________________________________________________________________
+
 **2- Using HostPath for intra-node communication &nbsp;&nbsp;&nbsp;&nbsp;Ref-->hostPath**
 
 **Usage**:
@@ -13,6 +14,7 @@ __________________________________________________________________________
   - If you want pods to get access to some host information or you want pods on the same node to communicate with each other (DaemonSet, Pod affinity, single node, etc )
 It is not persistent in case of pod restarts and node restarts   
 ___________________________________________________________________________
+
 **3- Using local volumes for durable node storage  &nbsp;&nbsp;&nbsp;&nbsp;Ref-->persistent-local-volume**
 
 **Usage**:
@@ -21,11 +23,13 @@ ___________________________________________________________________________
   - Local volumes should have node affinity annotations. 
   - StorageClass needed in order to use local volumes.
 ____________________________________________________________________________
+
 **4- Provisioning persistent volumes using DirectNFS   &nbsp;&nbsp;&nbsp;&nbsp;Ref-->directNFS**
 
 **Usage**:
  - It is good to move storage provisioners out of Kubernetes core into volume plugins ( NFS in this case )
 ____________________________________________________________________________
+
 **5- Amazon EBS  &nbsp;&nbsp;&nbsp;&nbsp;Ref-->Amazon-EBS** 
 
 **Limitations**:
@@ -36,3 +40,12 @@ ____________________________________________________________________________
 
 **Note** that no need for a claim or storage class , we only mount the volume directly by ID
 _____________________________________________________________________________
+
+**6- Amazon EFS &nbsp;&nbsp;&nbsp;&nbsp;Ref-->Amazon-EFS**
+ - Managed NFS service and does not have the limitations of Amazon EBS but could be more expensive.
+ - External provisioner needed in order to allow you to mount EFS storage as PersistentVolumes in kubernetes.
+ - The pv/pvc config pretty similar to NFSdirect.
+
+**Note    the EFS provisioner is not covered here!**
+_____________________________________________________________________________
+

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: efs-pv
+spec:
+  capacity:
+    storage: 50Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: eu-west-1b.xxxxxxxxxxxx.amazonaws.com   ## you need to replace it with your Server ID
+    path: /
