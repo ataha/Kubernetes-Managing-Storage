@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aws-ebs-pod
+spec:
+  containers:
+  - image: container_image
+    name: container_name
+    volumeMounts:
+    - mountPath: /test-ebs
+      name: my-ebs-volume
+  volumes:
+  - name: my-ebs-volume
+    awsElasticBlockStore:
+      volumeID: <volume-id>
+      fsType: ext4
