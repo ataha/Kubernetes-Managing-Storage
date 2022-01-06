@@ -49,3 +49,14 @@ _____________________________________________________________________________
 **Note    the EFS provisioner is not covered here!**
 _____________________________________________________________________________
 
+**7- gcePersistentDisk;Ref-->gcePersistentDisk**
+
+**Limitations**:
+  - It can only be used by GCE instances in the same project and zone.
+
+**Usage**:
+  - it supports ReadWriteOnce and ReadOnlyMany. You can use it to share data as read-only between multiple pods in the same zone.
+
+_____________________________________________________________________________
+
+**8- Azure Files;Ref-->AzureFile

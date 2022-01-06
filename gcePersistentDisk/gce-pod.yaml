@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: containerg-pod
+spec:
+  containers:
+  - image: containerg-image
+    name: containerg-container
+    volumeMounts:
+    - mountPath: /persistentdisk
+      name: containerg-volume
+  volumes:
+  - name: containerg-volume
+    gcePersistentDisk:
+      pdName: <persistent disk name>
+      fsType: ext4
+ 
