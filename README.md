@@ -49,7 +49,7 @@ _____________________________________________________________________________
 **Note    the EFS provisioner is not covered here!**
 _____________________________________________________________________________
 
-**7- gcePersistentDisk;Ref-->gcePersistentDisk**
+**7- gcePersistentDiskR &nbsp;&nbsp;&nbsp;&nbsp;Ref-->gcePersistentDisk**
 
 **Limitations**:
   - It can only be used by GCE instances in the same project and zone.
@@ -59,4 +59,9 @@ _____________________________________________________________________________
 
 _____________________________________________________________________________
 
-**8- Azure Files;Ref-->AzureFile
+**8- Azure Files &nbsp;&nbsp;&nbsp;&nbsp;Ref-->AzureFiles**
+  - Azure Files uses the SMB/CIFS protocol 
+  - In order to use Azure File you need to create a secret contains 
+              - azurestorageaccountname
+              - azurestorageaccountkey
+

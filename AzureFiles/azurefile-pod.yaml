@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: container-pod
+spec:
+ containers:
+  - image: container-container
+    name: container-container
+    volumeMounts:
+      - name: container-volume
+        mountPath: /azurefile
+ volumes:
+      - name: container-volume
+        azureFile:
+          secretName: azure-file-secret
+          shareName: azure-share
+          readOnly: false
